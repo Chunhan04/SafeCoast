@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeCoast</title>
+    <link rel="stylesheet" href="./css/style2.css" />
+  </head>
+  <body>
+    <main>
+      <div id="container3D"></div>
+    </main>
+
+    <audio id="audio" src="./help.mp3" preload="auto" autoplay loop></audio>
+
+    <div id="voice">    
+        <div class="frame-container">
+            <img src="./frame.png">
+            <div class="frame-text">
+                <div class="text">Voice Emergency Trigger</div>
+                <div class="text-border">Activate Voice Command <br>"Help Me!"</div>
+                <div class="text-below">Location Shared With Family <br><span class="sos-sent">SOS sent</span></div>
+            </div>
+            <script type="module" src="./js/main2.js"></script>
+        </div>
+        <button id="stopAudioButton">Stop Audio</button>
+    </div>
+
+    <script>
+        // Audio already set to autoplay in the <audio> element, so no need for window.onload
+        const stopAudioButton = document.getElementById("stopAudioButton");
+        stopAudioButton.addEventListener('click', function() {
+            const audio = document.getElementById("audio");
+            audio.pause(); // Stop the audio when the button is clicked
+        });
+    </script>
+  </body>
+</html>
